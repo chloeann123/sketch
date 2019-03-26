@@ -1,0 +1,86 @@
+.showButton {
+  cursor: pointer;
+}
+
+
+/*Some stylings to the button*/
+
+.showButton {
+  font-family: sans-serif;
+  /*position: absolute;
+  top: calc(50vh - 5px);
+  left: calc(50vw - 25px);*/
+  color: #fff;
+  padding: 10px 43px;
+}
+
+.showButton {
+  background: black;
+}
+
+.center-this {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finishButton {
+  position: absolute;
+  top: 12%;
+  left: 67%;
+  z-index: 9000;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+p {
+  font-family: sans-serif;
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+}
+
+#word {
+  display: none;
+  position: absolute;
+  top: 12%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+}
+
+#defaultCanvas0 {
+  border: 1px black solid;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*
+.wordDisplay{
+font-family: sans-serif;
+position: fixed;
+top: 16.5px;
+left: 275px;
+
+
+}
+
+.NewWord{
+  font-family: sans-serif;
+  position: fixed;
+  top: 16.5px;
+  left: 275px;
+
+
+}
+*/

@@ -1,0 +1,14 @@
+body{
+  padding:0px;
+  margin:0px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+}
+
+.gallery img{
+   width: 100%;
+}
