@@ -1,14 +1,40 @@
-body{
-  padding:0px;
-  margin:0px;
+body {
+  padding: 0px;
+  margin: 0px;
 }
 
-.gallery{
-  display:grid;
+.gallery {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.gallery img {
+  width: 100%;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
 }
 
-.gallery img{
-   width: 100%;
+.begin {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  height: 30vh;
+  width: 177vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: avenir next;
+  text-align: center;
+  font-size: 18px;
+
 }

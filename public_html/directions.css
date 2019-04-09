@@ -1,0 +1,56 @@
+h1 {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  height: 40vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: avenir next;
+  font-size: 45px;
+  color: white;
+}
+
+
+body {
+  background-color: black;
+}
+
+p {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: avenir next;
+  text-align: center;
+  font-size: 18px;
+  margin-left: 160px;
+  margin-right: 160px;
+  color: white;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: white;
+}
+
+.go {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  height: 170vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: avenir next;
+  text-align: center;
+  font-size: 18px;
+}

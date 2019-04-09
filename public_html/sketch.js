@@ -1,7 +1,15 @@
 var counter = 0;
-var timeleft = 30;
+var timeleft = 60;
 let drawingStarted = false;
 var interval;
+
+let topZone = false;
+let leftZone  = false;
+let rightZone  = false;
+let bottomZone  = false;
+
+let bufferZone  = 20;
+
 
 //start p5 stuff
 
@@ -15,24 +23,63 @@ function draw() {
   // put drawing code here
 
 
-  ellipse(0,height/2,5,5)
-  ellipse(width,height/2,5,5)
-  ellipse(300,0/2,5,5)
-  ellipse(300,1200/2,5,5)
+  ellipse(0,height/2,5,5) //left
+  ellipse(width,height/2,5,5) // right
+  ellipse(width/2,0,5,5) //top
+  ellipse(width/2,height,5,5) // bottom
 
   fill(0)
   // noStroke()
 
   // ellipse(mouseX,mouseY, 15,15)
-  strokeWeight(4)
+  strokeWeight(7.5)
   stroke(random(255), random(255), random(255))
   if (drawingStarted == true) {
     if (mouseIsPressed == true) {
       line(mouseX, mouseY, pmouseX, pmouseY)
+
+
+      if( dist(mouseX, mouseY, width/2, 0 ) < bufferZone ){
+        //we hit the top
+        // console.log('proof!')
+        topZone = true; //store it
+        console.log(topZone)
+
+      }
+
+      if( dist(mouseX, mouseY, width/2,height ) < bufferZone ){
+        //we hit the bottom
+        // console.log('proof!')
+        bottomZone = true; //store it
+        console.log(bottomZone)
+
+      }
+
+      if( dist(mouseX, mouseY, 0,height/2 ) < bufferZone ){
+        //we hit the left
+        // console.log('proof!')
+       leftZone = true; //store it
+        console.log(leftZone)
+
+      }
+
+      if( dist(mouseX, mouseY, width,height/2 ) < bufferZone ){
+        //we hit the right
+        // console.log('proof!')
+       rightZone = true; //store it
+        console.log(rightZone)
+
+      }
+
+    // repeat for each one.
+
+
+
     }
   }
-
 }
+
+
 
 
 //end of the p5 stuff
@@ -52,6 +99,9 @@ $(function() { //jquery specific stuff in here!
           //Timer is done!
           //time ends, then we want to save it
 
+          //check the zones
+
+          if(topZone == true &&  bottomZone == true && leftZone == true && rightZone == true ){
           //get the element so we can convert to a blob
           var canvas = document.getElementById('defaultCanvas0'); //p5 generates a canvas with the ID of 'defaultCanvas0'
 
@@ -70,9 +120,17 @@ $(function() { //jquery specific stuff in here!
               success: function(data) {
                 // alert(data);
                 console.log('image uploaded successfully')
+                window.location = 'gallery.html'
               }
 
             }); //end on the ajax post
+          }else{
+            //thow an error because there were not enfough zones hit
+            console.error('not enough zones')
+            //alert('you need to hit all 4 zones')
+            window.location = 'directions_corners.html'
+
+          }
 
             ////////////
             // this is where you'll give feedback to re-direct to another page, etc.
